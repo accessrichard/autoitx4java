@@ -22,6 +22,7 @@
 package autoitx4java;
 
 import com.jacob.activeX.ActiveXComponent;
+import com.jacob.com.ComThread;
 import com.jacob.com.LibraryLoader;
 import com.jacob.com.SafeArray;
 import com.jacob.com.Variant;
@@ -183,7 +184,7 @@ public class AutoItX {
      * Initializes AutoItX.
      */
     public AutoItX() {
-        autoItX = new ActiveXComponent("AutoItX3.Control");
+        init();
     }
 
     /**
@@ -192,7 +193,7 @@ public class AutoItX {
      */
     public AutoItX(File jacobDll) {
         System.setProperty(LibraryLoader.JACOB_DLL_PATH, jacobDll.getAbsolutePath());
-        autoItX = new ActiveXComponent("AutoItX3.Control");
+        init();
     }
 
     /**
@@ -201,7 +202,22 @@ public class AutoItX {
      */
     public AutoItX(String jacobDll) {
         System.setProperty(LibraryLoader.JACOB_DLL_PATH, new File(jacobDll).getAbsolutePath());
+        init();
+    }
+
+    /**
+     * Starts the ComThread using STA and inits autoItX.
+     */
+    private void init() {
+        ComThread.InitSTA();
         autoItX = new ActiveXComponent("AutoItX3.Control");
+    }
+
+    /**
+     * Releases AutoItX
+     */
+    public void release() {
+        ComThread.Release();
     }
 
     /**
@@ -273,7 +289,7 @@ public class AutoItX {
         return oneToTrue(result.getInt());
     }
 
-        /**
+    /**
      * Maps a network drive.
      * <p><b>Verify Works</b></p>
      * @param device The device to map, for example "O:" or "LPT1:". If you pass a blank string for this parameter a connection is made but not mapped to a specific drive. If you specify "*" an unused drive letter will be automatically selected.
@@ -292,7 +308,6 @@ public class AutoItX {
         }
         return oneToTrue(result.getInt());
     }
-
 
     /**
      * Disconnects a network drive.
@@ -553,8 +568,11 @@ public class AutoItX {
         Variant vParam = new Variant(param);
         Variant[] params = new Variant[]{vOption, vParam};
         Variant result = autoItX.invoke("AutoItSetOption", params);
+        if (result.getvt() == Variant.VariantInt) {
+            int i = result.getInt();
+            return String.valueOf(i);
+        }
         return result.getString();
-
     }
 
     /**
@@ -1706,20 +1724,16 @@ public class AutoItX {
         return result.getInt();
     }
 
-
-    //@TODO Fix
+    
     protected String controlString(String title, String text, String control, String function) {
         Variant result = controlVariant(title, text, control, function);
-        if (result.getvt() == Variant.VariantInt) {
-            return "";
-        }
-
         if (result.getvt() == Variant.VariantString) {
-            if (result.getString().contentEquals("")) {
-                return "";
-            }
+            return result.getString();
         }
-        return result.getString();
+        if (result.getvt() == Variant.VariantInt){
+            return String.valueOf(result.getInt());
+        }
+        return "";
     }
 
     /**
@@ -2029,7 +2043,7 @@ public class AutoItX {
      * Activates (gives focus to) a window.
      * @param title The title of the window to activate.
      */
-    public void WinActivate(String title) {
+    public void winActivate(String title) {
         winVariant(title, "WinActivate");
     }
 
@@ -2792,17 +2806,27 @@ public class AutoItX {
      * @param title The title of the window to check.
      * @return  The text from a standard status bar control.
      */
-    public String StatusbarGetText(String title) {
+    public String statusbarGetText(String title) {
         return autoItX.invoke("StatusbarGetText", title).getString();
     }
 
+    /**
+     * Converts the value 1 to true, anything else to false.
+     * @param i The value to convert to true/false
+     * @return 1 = true, anything else = false.
+     */
     protected boolean oneToTrue(int i) {
         return (i == 1) ? true : false;
     }
 
+    /**
+     * Converts the value 1 to true, anything else to false.
+     * @param i The value to convert to true/false
+     * @return 1 = true, anything else = false.
+     */
     protected boolean oneToTrue(Variant v) {
         if (v.getvt() == Variant.VariantInt
-                || v.getvt() == Variant.VariantShort){
+                || v.getvt() == Variant.VariantShort) {
             return (v.getInt() == 1) ? true : false;
         }
         return false;
