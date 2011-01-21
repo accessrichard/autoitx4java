@@ -39,10 +39,6 @@ public class AutoItX {
      */
     protected ActiveXComponent autoItX;
     /**
-     * Hides the window and activates another window. 
-     */
-    public final static int INT_DEFAULT = -2147483647;
-    /**
      * Maximizes the specified window.
      */
     public final static int SW_MAXIMIZE = 3;
