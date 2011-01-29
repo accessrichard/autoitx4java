@@ -22,11 +22,8 @@
 package autoitx4java;
 
 import com.jacob.activeX.ActiveXComponent;
-import com.jacob.com.ComThread;
-import com.jacob.com.LibraryLoader;
 import com.jacob.com.SafeArray;
 import com.jacob.com.Variant;
-import java.io.File;
 
 /**
  * A Java AutoItX3 Bridge.
@@ -175,47 +172,16 @@ public class AutoItX {
      * Time in milliseconds to pause (default=250).
      */
     public final static String OPT_WIN_WAIT_DELAY = "WinWaitDelay";
+   
 
     /**
-     * Initializes AutoItX.
+     * Initializes the AutoItX Jacob COM object.
      */
     public AutoItX() {
-        init();
-    }
-
-    /**
-     * Initializes AutoItX with the JacobDll  referenced.
-     * @param jacobDll The Jacob DLL
-     */
-    public AutoItX(File jacobDll) {
-        System.setProperty(LibraryLoader.JACOB_DLL_PATH, jacobDll.getAbsolutePath());
-        init();
-    }
-
-    /**
-     * Initializes AutoItX with the JacobDll  referenced.
-     * @param jacobDll The Jacob DLL
-     */
-    public AutoItX(String jacobDll) {
-        System.setProperty(LibraryLoader.JACOB_DLL_PATH, new File(jacobDll).getAbsolutePath());
-        init();
-    }
-
-    /**
-     * Starts the ComThread using STA and inits autoItX.
-     */
-    private void init() {
-        ComThread.InitSTA();
         autoItX = new ActiveXComponent("AutoItX3.Control");
     }
 
-    /**
-     * Releases AutoItX
-     */
-    public void release() {
-        ComThread.Release();
-    }
-
+    
     /**
      * The AutoItX version.
      * @return The AutoItX version.
@@ -238,8 +204,7 @@ public class AutoItX {
      * @return A string containing the text on the clipboard. Sets error to 1 if clipboard is empty or contains a non-text entry.
      */
     public String clipGet() {
-        Variant clipText = autoItX.invoke("ClipGet");
-        return clipText.getString();
+       return autoItX.invoke("ClipGet").getString();
     }
 
     /**
@@ -262,11 +227,10 @@ public class AutoItX {
     }
 
     /**
-     * Maps a network drive.
-     * <p><b>Verify Works</b></p>
+     * Maps a network drive.     
      * @param device The device to map, for example "O:" or "LPT1:". If you pass a blank string for this parameter a connection is made but not mapped to a specific drive. If you specify "*" an unused drive letter will be automatically selected.
      * @param remote The remote share to connect to in the form "\\server\share".
-     * @param flags A combination of the following:0 = default, 1 = Persistant mapping, 8 = Show authentication dialog if required
+     * @param flags A combination of the following:0 = default, 1 = Persistent mapping, 8 = Show authentication dialog if required
      * @param username The username
      * @param password The password
      * @return True if success, false otherwise
@@ -287,10 +251,9 @@ public class AutoItX {
 
     /**
      * Maps a network drive.
-     * <p><b>Verify Works</b></p>
      * @param device The device to map, for example "O:" or "LPT1:". If you pass a blank string for this parameter a connection is made but not mapped to a specific drive. If you specify "*" an unused drive letter will be automatically selected.
      * @param remote The remote share to connect to in the form "\\server\share".
-     * @param flags A combination of the following:0 = default, 1 = Persistant mapping, 8 = Show authentication dialog if required
+     * @param flags A combination of the following:0 = default, 1 = Persistent mapping, 8 = Show authentication dialog if required
      * @return True if success, false otherwise
      */
     public boolean driveMapAdd(String device, String remote, int flags) {
@@ -307,7 +270,6 @@ public class AutoItX {
 
     /**
      * Disconnects a network drive.
-     * <p><b>Verify Works</b></p>
      * @param device The device to disconnect, e.g. "O:" or "LPT1:".
      * @return True if success, false otherwise
      */
@@ -318,7 +280,6 @@ public class AutoItX {
 
     /**
      * The device (drive or printer) letter to query. Eg. "O:" or "LPT1:"
-     * <p><b>Verify Works</b></p>
      * @param device The device to disconnect, e.g. "O:" or "LPT1:".
      * @return Details of the mapping, e.g. \\server\share. If blank, sets .error() to 1.
      */
@@ -441,7 +402,7 @@ public class AutoItX {
      * @param top top coordinate of rectangle.
      * @param right right coordinate of rectangle.
      * @param bottom bottom coordinate of rectangle.
-     * @param color Colour value of pixel to find (in decimal or hex).
+     * @param color Color value of pixel to find (in decimal or hex).
      * @param shadeVariation A number between 0 and 255 to indicate the allowed number of shades of variation of the red, green, and blue components of the colour. Default is 0 (exact match).
      * @param step Instead of searching each pixel use a value larger than 1 to skip pixels (for speed). E.g. A value of 2 will only check every other pixel. Default is 1.
      * @return The pixel's coordinates in a 2 element array, otherwise sets .error() to one.
@@ -472,7 +433,7 @@ public class AutoItX {
      * @param top top coordinate of rectangle.
      * @param right right coordinate of rectangle.
      * @param bottom bottom coordinate of rectangle.
-     * @param color Colour value of pixel to find (in decimal or hex).
+     * @param color Color value of pixel to find (in decimal or hex).
      * @return The pixel's coordinates in a 2 element array, otherwise sets .error() to one.
      */
     public long[] pixelSearch(int left, int top, int right, int bottom, int color) {
@@ -532,7 +493,6 @@ public class AutoItX {
 
     /**
      * Opens or closes the CD tray.
-     * <p><b>Verify Works</b></p>
      * @param drive The drive letter of the CD tray to control, in the format D:, E:, etc.
      * @param status Specifies if you want the CD tray to be open or closed: "open" or "closed"
      * @return True if success, false if drive is locked via CD burning software or if the drive letter is not a CD drive.
@@ -1720,13 +1680,12 @@ public class AutoItX {
         return result.getInt();
     }
 
-    
     protected String controlString(String title, String text, String control, String function) {
         Variant result = controlVariant(title, text, control, function);
         if (result.getvt() == Variant.VariantString) {
             return result.getString();
         }
-        if (result.getvt() == Variant.VariantInt){
+        if (result.getvt() == Variant.VariantInt) {
             return String.valueOf(result.getInt());
         }
         return "";
