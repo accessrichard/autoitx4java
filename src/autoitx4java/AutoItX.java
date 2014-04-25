@@ -35,50 +35,61 @@ public class AutoItX {
      * The AutoItX Component.
      */
     protected ActiveXComponent autoItX;
+    
     /**
      * Maximizes the specified window.
-     */
+     */    
     public final static int SW_MAXIMIZE = 3;
+    
     /**
      * Minimizes the specified window and activates the next top-level window in the Z order.
-     */
+     */    
     public final static int SW_HIDE = 0;
     /**
      * Activates and displays the window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when restoring a minimized window.
-     */
+     */    
     public final static int SW_RESTORE = 9;
+    
     /**
      * Activates the window and displays it in its current size and position.
-     */
+     */    
     public final static int SW_SHOW = 5;
+    
     /**
      * Sets the show state based on the SW_ value specified by the program that started the application.
-     */
+     */    
     public final static int SW_SHOWDEFAULT = 10;
+    
     /**
      * Activates the window and displays it as a maximized window.
-     */
+     */    
     public final static int SW_SHOWMAXIMIZED = 3;
+    
     /**
      * Activates the window and displays it as a minimized window.
-     */
+     */    
     public final static int SW_SHOWMINIMIZED = 2;
+    
     /**
      * Displays the window as a minimized window. This value is similar to SW_SHOWMINIMIZED, except the window is not activated.
      */
     public final static int SW_SHOWMINNOACTIVE = 7;
+    
     /**
      * Displays the window in its current size and position. This value is similar to SW_SHOW, except the window is not activated.
      */
     public final static int SW_SHOWNA = 8;
+    
     /**
      * Displays a window in its most recent size and position. This value is similar to SW_SHOWNORMAL, except the window is not actived.
      */
     public final static int SW_SHOWNOACTIVATE = 4;
+    
     /**
      * Activates and displays a window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the window for the first time.
      */
     public final static int SW_SHOWNORMAL = 1;
+    
     /**
      * Sets the way coords are used in the caret functions, either absolute coords or coords relative to the current active window:
      * <br/>0 = relative coords to the active window,
@@ -86,21 +97,25 @@ public class AutoItX {
      * <br/>2 = relative coords to the client area of the active window.
      */
     public final static String OPT_CARET_COORD_MODE = "CaretCoordMode";
+    
     /**
      * Alters the length of the brief pause in between mouse clicks.
      * Time in milliseconds to pause (default=10).
      */
     public final static String OPT_MOUSE_CLICK_DELAY = "MouseClickDelay";
+    
     /**
      * Alters the length of the brief pause in between mouse clicks.
      * Time in milliseconds to pause (default=10).
      */
     public final static String OPT_MOUSE_CLICK_DOWN_DELAY = "MouseClickDownDelay";
+    
     /**
      * Alters the length of the brief pause at the start and end of a mouse drag operation.
      * Time in milliseconds to pause (default=250).
      */
     public final static String OPT_MOUSE_CLICK_DRAG_DELAY = "MouseClickDragDelay";
+    
     /**
      * Sets the way coords are used in the mouse functions, either absolute coords or coords relative to the current active window:
      * <br/>0 = relative coords to the active window
@@ -108,6 +123,7 @@ public class AutoItX {
      * <br/>2 = relative coords to the client area of the active window
      */
     public final static String OPT_MOUSE_COORD_MODE = "MouseCoordMode";
+    
     /**
      * Sets the way coords are used in the mouse functions, either absolute coords or coords relative to the current active window:
      * <br/>0 = relative coords to the active window
@@ -115,6 +131,7 @@ public class AutoItX {
      * <br/>2 = relative coords to the client area of the active window
      */
     public final static String OPT_PIXEL_COORD_MODE = "PixelCoordMode";
+    
     /**
      * Sets the way coords are used in the pixel functions, either absolute coords or coords relative to the current active window:
      * <br/>0 = relative coords to the active window
@@ -122,35 +139,41 @@ public class AutoItX {
      * <br/>2 = relative coords to the client area of the active window
      */
     public final static String OPT_SEND_ATTACH_MODE = "SendAttachMode";
+    
     /**
      * Specifies if AutoIt attaches input threads when using then Send() function. When not attaching (default mode=0) detecting the state of capslock/scrolllock and numlock can be unreliable under NT4. However, when you specify attach mode=1 the Send("{... down/up}") syntax will not work and there may be problems with sending keys to "hung" windows. ControlSend() ALWAYS attaches and is not affected by this mode.
      * <br/>0 = don't attach (default)
      * <br/>1 = attach
      */
     public final static String OPT_SEND_CAPSLOCK_MODE = "SendCapslockMode";
+    
     /**
      * Specifies if AutoIt should store the state of capslock before a Send function and restore it afterwards.
      * <br/>0 = don't store/restore
      * <br/>1 = store and restore (default)
      */
     public final static String OPT_SEND_KEY_DELAY = "SendKeyDelay";
+    
     /**
      * Alters the length of time a key is held down before released during a keystroke. For applications that take a while to register keypresses (and many games) you may need to raise this value from the default.
      * Time in milliseconds to pause (default=1).
      */
     public final static String OPT_SEND_KEY_DOWN_DELAY = "SendKeyDownDelay";
+    
     /**
      * Specifies if hidden window text can be "seen" by the window matching functions.
      * <br/>0 = Do not detect hidden text (default)
      * <br/>1 = Detect hidden text
      */
     public final static String OPT_WIN_DETECT_HIDDEN_TEXT = "WinDetectHiddenText";
+    
     /**
      * Allows the window search routines to search child windows as well as top-level windows.
      * <br/>0 = Only search top-level windows (default)
      * <br/>1 = Search top-level and child windows
      */
     public final static String OPT_WIN_SEARCH_CHILDREN = "WinSearchChildren";
+    
     /**
      * Alters the method that is used to match window text during search operations.
      * <br/>1 = Complete / Slow mode (default)
@@ -159,6 +182,7 @@ public class AutoItX {
      * If you are having performance problems when performing many window searches then changing to the "quick" mode may help.
      */
     public final static String OPT_WIN_TEXT_MATCH_MODE = "WinTextMatchMode";
+    
     /**
      * Alters the method that is used to match window titles during search operations.
      * <br/>1 = Match the title from the start (default)
@@ -167,6 +191,7 @@ public class AutoItX {
      * <br/>4 = Advanced mode, see Window Titles & Text (Advanced)
      */
     public final static String OPT_WIN_TITLE_MATCH_MODE = "WinTitleMatchMode";
+    
     /**
      * Alters how long a script should briefly pause after a successful window-related operation.
      * Time in milliseconds to pause (default=250).
@@ -180,7 +205,6 @@ public class AutoItX {
     public AutoItX() {
         autoItX = new ActiveXComponent("AutoItX3.Control");
     }
-
     
     /**
      * The AutoItX version.
@@ -981,9 +1005,11 @@ public class AutoItX {
         if (result.getvt() == Variant.VariantInt) {
             return String.valueOf(result.getInt());
         }
+        
         if (result.getvt() == Variant.VariantString) {
             return result.getString();
         }
+        
         return "";
     }
 
@@ -1080,17 +1106,17 @@ public class AutoItX {
         return controlClick(title, text, controlID, "left", 1);
     }
 
-    protected String controlCommandString(String title, String text, String control, String command, String option) {
+    private String controlCommandString(String title, String text, String control, String command, String option) {
         Variant result = controlCommandVariant(title, text, control, command, option);
         return result.getString();
     }
 
-    protected void controlCommandVoid(String title, String text, String control, String command, String option) {
+    private void controlCommandVoid(String title, String text, String control, String command, String option) {
         controlCommandVariant(title, text, control, command, option);
 
     }
 
-    protected Variant controlCommandVariant(String title, String text, String control, String command, String option) {
+    private Variant controlCommandVariant(String title, String text, String control, String command, String option) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vControl = new Variant(control);
@@ -1190,7 +1216,7 @@ public class AutoItX {
         controlCommandVoid(title, text, control, "SelectString", string);
     }
 
-    protected boolean controlCommandBoolean(String title, String text, String control, String command, String option) {
+    private boolean controlCommandBoolean(String title, String text, String control, String command, String option) {
         return oneToTrue(controlCommandInts(title, text, control, command, option));
     }
 
@@ -1238,13 +1264,11 @@ public class AutoItX {
         return controlCommandInts(title, text, control, "FindString", string);
     }
 
-    protected int controlCommandInts(String title, String text, String control, String command, String option) {
+    private int controlCommandInts(String title, String text, String control, String command, String option) {
         Variant result = controlCommandVariant(title, text, control, command, option);
-        int iResult = 0;
-        if (result.getvt() == Variant.VariantString) {
-            iResult = Integer.parseInt(result.getString());
-        }
-        return iResult;
+        return result.getvt() == Variant.VariantString 
+                ? Integer.parseInt(result.getString()) 
+                : 0;
     }
 
     /**
@@ -1488,15 +1512,15 @@ public class AutoItX {
         return controlListViewInt(title, text, control, "FindItem", string, subitem);
     }
 
-    protected int controlListViewInt(String title, String text, String control, String command, String option, String option2) {
+    private int controlListViewInt(String title, String text, String control, String command, String option, String option2) {
         return controlView(title, text, control, command, option, option2, "ControlListView").getInt();
     }
 
-    protected String controlListViewString(String title, String text, String control, String command, String option, String option2) {
+    private String controlListViewString(String title, String text, String control, String command, String option, String option2) {
         return controlView(title, text, control, command, option, option2, "ControlListView").getString();
     }
 
-    protected Variant controlView(String title, String text, String control, String command, String option, String option2, String function) {
+    private Variant controlView(String title, String text, String control, String command, String option, String option2, String function) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vControl = new Variant(control);
@@ -1645,7 +1669,6 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
-
      */
     public void controlListViewSelectInvert(String title, String text, String control) {
         controlView(title, text, control, "SelectInvert", "", "", "ControlListView");
@@ -1685,9 +1708,11 @@ public class AutoItX {
         if (result.getvt() == Variant.VariantString) {
             return result.getString();
         }
+        
         if (result.getvt() == Variant.VariantInt) {
             return String.valueOf(result.getInt());
         }
+        
         return "";
     }
 
@@ -1798,11 +1823,11 @@ public class AutoItX {
         return controlBool(title, text, control, "ControlShow");
     }
 
-    protected String controlTreeViewString(String title, String text, String control, String command, String option, String option2) {
+    private String controlTreeViewString(String title, String text, String control, String command, String option, String option2) {
         return controlView(title, text, control, command, option, option2, "ControlTreeView").getString();
     }
 
-    protected int controlTreeViewInt(String title, String text, String control, String command, String option, String option2) {
+    private int controlTreeViewInt(String title, String text, String control, String command, String option, String option2) {
         return controlView(title, text, control, command, option, option2, "ControlTreeView").getInt();
     }
 
@@ -1972,14 +1997,14 @@ public class AutoItX {
 
     }
 
-    protected Variant winVariant(String title, String text, String function) {
+    private Variant winVariant(String title, String text, String function) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant[] params = new Variant[]{vTitle, vText};
         return autoItX.invoke(function, params);
     }
 
-    protected Variant winVariant(String title, String function) {
+    private Variant winVariant(String title, String function) {
         Variant vTitle = new Variant(title);
         Variant[] params = new Variant[]{vTitle};
         return autoItX.invoke(function, params);
@@ -2129,12 +2154,8 @@ public class AutoItX {
         return result.getInt();
     }
 
-    protected String safeString(Variant v) {
-        String safeResult = "";
-        if (v.getvt() == Variant.VariantString) {
-            safeResult = v.getString();
-        }
-        return safeResult;
+    private String safeString(Variant v) {
+        return v.getvt() == Variant.VariantString ? v.getString() : "";
     }
 
     /**
@@ -2165,8 +2186,7 @@ public class AutoItX {
      * @return Returns the X coordinate of the window. Otherwise returns 1 and sets .error() = 1
      */
     public int winGetPosX(String title, String text) {
-        Variant result = winVariant(title, text, "WinGetPosX");
-        return result.getInt();
+        return winVariant(title, text, "WinGetPosX").getInt();
     }
 
     /**
@@ -2175,8 +2195,7 @@ public class AutoItX {
      * @return Returns the X coordinate of the window. Otherwise returns 1 and sets .error() = 1
      */
     public int winGetPosX(String title) {
-        Variant result = winVariant(title, "WinGetPosX");
-        return result.getInt();
+        return winVariant(title, "WinGetPosX").getInt();
     }
 
     /**
@@ -2712,9 +2731,6 @@ public class AutoItX {
 
     /**
      * Pauses execution of the script until the requested window is not active.
-
-
-
      * @param title The title of the window to check.
      * @return True if success, false otherwise.
      */
@@ -2732,7 +2748,7 @@ public class AutoItX {
         return winVariantBool(title, text, "WinWaitNotActive");
     }
 
-    protected boolean winVariantBool(String title, String text, int timeout, String function) {
+    private boolean winVariantBool(String title, String text, int timeout, String function) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vTimeout = new Variant(timeout);
@@ -2741,7 +2757,7 @@ public class AutoItX {
         return oneToTrue(result.getInt());
     }
 
-    protected boolean winVariantBool(String title, String text, String function) {
+    private boolean winVariantBool(String title, String text, String function) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant[] params = new Variant[]{vTitle, vText};
@@ -2749,7 +2765,7 @@ public class AutoItX {
         return oneToTrue(result.getInt());
     }
 
-    protected boolean winVariantBool(String title, String function) {
+    private boolean winVariantBool(String title, String function) {
         Variant vTitle = new Variant(title);
         Variant[] params = new Variant[]{vTitle};
         Variant result = autoItX.invoke(function, params);
@@ -2770,8 +2786,8 @@ public class AutoItX {
      * @param i The value to convert to true/false
      * @return 1 = true, anything else = false.
      */
-    protected boolean oneToTrue(int i) {
-        return (i == 1) ? true : false;
+    private boolean oneToTrue(int i) {
+        return i == 1;
     }
 
     /**
@@ -2779,11 +2795,12 @@ public class AutoItX {
      * @param i The value to convert to true/false
      * @return 1 = true, anything else = false.
      */
-    protected boolean oneToTrue(Variant v) {
+    private boolean oneToTrue(Variant v) {
         if (v.getvt() == Variant.VariantInt
                 || v.getvt() == Variant.VariantShort) {
-            return (v.getInt() == 1) ? true : false;
+            return v.getInt() == 1;
         }
+        
         return false;
     }
 }
