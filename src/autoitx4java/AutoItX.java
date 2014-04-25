@@ -548,9 +548,9 @@ public class AutoItX {
         Variant[] params = new Variant[]{vOption, vParam};
         Variant result = autoItX.invoke("AutoItSetOption", params);
         if (result.getvt() == Variant.VariantInt) {
-            int i = result.getInt();
-            return String.valueOf(i);
+            return String.valueOf(result.getInt());
         }
+        
         return result.getString();
     }
 
@@ -580,7 +580,6 @@ public class AutoItX {
         Variant vSpeed = new Variant(speed);
         Variant[] params = new Variant[]{vButton, vX, vY, vClicks, vSpeed};
         autoItX.invoke("MouseClick", params);
-
     }
 
     /**
