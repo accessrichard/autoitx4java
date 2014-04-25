@@ -442,12 +442,11 @@ public class AutoItX {
         Variant[] params = new Variant[]{vLeft, vTop, vRight, vBottom, vColor, vShadeVariation, vStep};
         Variant result = autoItX.invoke("PixelSearch", params);
         long[] l = new long[2];
-
         if (result.getvt() == 8204) {
             l[0] = result.toSafeArray().getLong(0);
             l[1] = result.toSafeArray().getLong(1);
-            return l;
         }
+        
         return l;
     }
 
