@@ -42,11 +42,14 @@ public class AutoItX {
     public final static int SW_MAXIMIZE = 3;
     
     /**
-     * Minimizes the specified window and activates the next top-level window in the Z order.
+     * Minimizes the specified window and activates the next top-level window 
+     * in the Z order.
      */    
     public final static int SW_HIDE = 0;
     /**
-     * Activates and displays the window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when restoring a minimized window.
+     * Activates and displays the window. If the window is minimized or maximized, 
+     * the system restores it to its original size and position. 
+     * An application should specify this flag when restoring a minimized window.
      */    
     public final static int SW_RESTORE = 9;
     
@@ -56,7 +59,8 @@ public class AutoItX {
     public final static int SW_SHOW = 5;
     
     /**
-     * Sets the show state based on the SW_ value specified by the program that started the application.
+     * Sets the show state based on the SW_ value specified by the program 
+     * that started the application.
      */    
     public final static int SW_SHOWDEFAULT = 10;
     
@@ -71,27 +75,34 @@ public class AutoItX {
     public final static int SW_SHOWMINIMIZED = 2;
     
     /**
-     * Displays the window as a minimized window. This value is similar to SW_SHOWMINIMIZED, except the window is not activated.
+     * Displays the window as a minimized window. This value is similar to 
+     * SW_SHOWMINIMIZED, except the window is not activated.
      */
     public final static int SW_SHOWMINNOACTIVE = 7;
     
     /**
-     * Displays the window in its current size and position. This value is similar to SW_SHOW, except the window is not activated.
+     * Displays the window in its current size and position. This value is 
+     * similar to SW_SHOW, except the window is not activated.
      */
     public final static int SW_SHOWNA = 8;
     
     /**
-     * Displays a window in its most recent size and position. This value is similar to SW_SHOWNORMAL, except the window is not actived.
+     * Displays a window in its most recent size and position. This value is 
+     * similar to SW_SHOWNORMAL, except the window is not actived.
      */
     public final static int SW_SHOWNOACTIVATE = 4;
     
     /**
-     * Activates and displays a window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the window for the first time.
+     * Activates and displays a window. If the window is minimized or maximized, 
+     * the system restores it to its original size and position. 
+     * An application should specify this flag when displaying the window 
+     * for the first time.
      */
     public final static int SW_SHOWNORMAL = 1;
     
     /**
-     * Sets the way coords are used in the caret functions, either absolute coords or coords relative to the current active window:
+     * Sets the way coords are used in the caret functions, either absolute 
+     * coords or coords relative to the current active window:
      * <br/>0 = relative coords to the active window,
      * <br/>1 = absolute screen coordinates (default),
      * <br/>2 = relative coords to the client area of the active window.
@@ -111,13 +122,14 @@ public class AutoItX {
     public final static String OPT_MOUSE_CLICK_DOWN_DELAY = "MouseClickDownDelay";
     
     /**
-     * Alters the length of the brief pause at the start and end of a mouse drag operation.
-     * Time in milliseconds to pause (default=250).
+     * Alters the length of the brief pause at the start and end of a mouse 
+     * drag operation. Time in milliseconds to pause (default=250).
      */
     public final static String OPT_MOUSE_CLICK_DRAG_DELAY = "MouseClickDragDelay";
     
     /**
-     * Sets the way coords are used in the mouse functions, either absolute coords or coords relative to the current active window:
+     * Sets the way coords are used in the mouse functions, either absolute 
+     * coords or coords relative to the current active window:
      * <br/>0 = relative coords to the active window
      * <br/>1 = absolute screen coordinates (default)
      * <br/>2 = relative coords to the client area of the active window
@@ -125,7 +137,8 @@ public class AutoItX {
     public final static String OPT_MOUSE_COORD_MODE = "MouseCoordMode";
     
     /**
-     * Sets the way coords are used in the mouse functions, either absolute coords or coords relative to the current active window:
+     * Sets the way coords are used in the mouse functions, either absolute 
+     * coords or coords relative to the current active window:
      * <br/>0 = relative coords to the active window
      * <br/>1 = absolute screen coordinates (default)
      * <br/>2 = relative coords to the client area of the active window
@@ -133,7 +146,8 @@ public class AutoItX {
     public final static String OPT_PIXEL_COORD_MODE = "PixelCoordMode";
     
     /**
-     * Sets the way coords are used in the pixel functions, either absolute coords or coords relative to the current active window:
+     * Sets the way coords are used in the pixel functions, either absolute 
+     * coords or coords relative to the current active window:
      * <br/>0 = relative coords to the active window
      * <br/>1 = absolute screen coordinates (default)
      * <br/>2 = relative coords to the client area of the active window
@@ -141,21 +155,29 @@ public class AutoItX {
     public final static String OPT_SEND_ATTACH_MODE = "SendAttachMode";
     
     /**
-     * Specifies if AutoIt attaches input threads when using then Send() function. When not attaching (default mode=0) detecting the state of capslock/scrolllock and numlock can be unreliable under NT4. However, when you specify attach mode=1 the Send("{... down/up}") syntax will not work and there may be problems with sending keys to "hung" windows. ControlSend() ALWAYS attaches and is not affected by this mode.
+     * Specifies if AutoIt attaches input threads when using then Send() 
+     * function. When not attaching (default mode=0) detecting the state of 
+     * capslock/scrolllock and numlock can be unreliable under NT4. However, 
+     * when you specify attach mode=1 the Send("{... down/up}") syntax will not 
+     * work and there may be problems with sending keys to "hung" windows. 
+     * ControlSend() ALWAYS attaches and is not affected by this mode.
      * <br/>0 = don't attach (default)
      * <br/>1 = attach
      */
     public final static String OPT_SEND_CAPSLOCK_MODE = "SendCapslockMode";
     
     /**
-     * Specifies if AutoIt should store the state of capslock before a Send function and restore it afterwards.
+     * Specifies if AutoIt should store the state of capslock before a 
+     * Send function and restore it afterwards.
      * <br/>0 = don't store/restore
      * <br/>1 = store and restore (default)
      */
     public final static String OPT_SEND_KEY_DELAY = "SendKeyDelay";
     
     /**
-     * Alters the length of time a key is held down before released during a keystroke. For applications that take a while to register keypresses (and many games) you may need to raise this value from the default.
+     * Alters the length of time a key is held down before released during a 
+     * keystroke. For applications that take a while to register keypresses 
+     * (and many games) you may need to raise this value from the default.
      * Time in milliseconds to pause (default=1).
      */
     public final static String OPT_SEND_KEY_DOWN_DELAY = "SendKeyDownDelay";
@@ -178,8 +200,11 @@ public class AutoItX {
      * Alters the method that is used to match window text during search operations.
      * <br/>1 = Complete / Slow mode (default)
      * <br/>2 = Quick mode
-     * In quick mode AutoIt can usually only "see" dialog text, button text and the captions of some controls. In the default mode much more text can be seen (for instance the contents of the Notepad window).
-     * If you are having performance problems when performing many window searches then changing to the "quick" mode may help.
+     * In quick mode AutoIt can usually only "see" dialog text, button text 
+     * and the captions of some controls. In the default mode much more text 
+     * can be seen (for instance the contents of the Notepad window).
+     * If you are having performance problems when performing many window 
+     * searches then changing to the "quick" mode may help.
      */
     public final static String OPT_WIN_TEXT_MATCH_MODE = "WinTextMatchMode";
     
@@ -225,7 +250,8 @@ public class AutoItX {
 
     /**
      * Retrieves text from the clipboard.
-     * @return A string containing the text on the clipboard. Sets error to 1 if clipboard is empty or contains a non-text entry.
+     * @return A string containing the text on the clipboard. Sets error to 1 
+     * if clipboard is empty or contains a non-text entry.
      */
     public String clipGet() {
        return autoItX.invoke("ClipGet").getString();
@@ -242,7 +268,10 @@ public class AutoItX {
     /**
      * Maps a network drive.
      * <p><b>Doesn't always work</b></p>
-     * @param device The device to map, for example "O:" or "LPT1:". If you pass a blank string for this parameter a connection is made but not mapped to a specific drive. If you specify "*" an unused drive letter will be automatically selected.
+     * @param device The device to map, for example "O:" or "LPT1:". If you 
+     *               pass a blank string for this parameter a connection is made but not 
+     *               mapped to a specific drive. If you specify "*" an unused drive letter 
+     *               will be automatically selected.
      * @param remote The remote share to connect to in the form "\\server\share".
      * @return True if success, false otherwise
      */
@@ -252,9 +281,15 @@ public class AutoItX {
 
     /**
      * Maps a network drive.     
-     * @param device The device to map, for example "O:" or "LPT1:". If you pass a blank string for this parameter a connection is made but not mapped to a specific drive. If you specify "*" an unused drive letter will be automatically selected.
+     * @param device The device to map, for example "O:" or "LPT1:". 
+     *               If you pass a blank string for this parameter a connection 
+     *               is made but not mapped to a specific drive. 
+     *               If you specify "*" an unused drive letter will be automatically 
+     *               selected.
      * @param remote The remote share to connect to in the form "\\server\share".
-     * @param flags A combination of the following:0 = default, 1 = Persistent mapping, 8 = Show authentication dialog if required
+     * @param flags A combination of the following: 0 = default, 
+     *              1 = Persistent mapping, 
+     *              8 = Show authentication dialog if required
      * @param username The username
      * @param password The password
      * @return True if success, false otherwise
@@ -270,14 +305,19 @@ public class AutoItX {
         if (result.getvt() == Variant.VariantString) {
             return oneToTrue(Integer.parseInt(result.getString()));
         }
+        
         return oneToTrue(result.getInt());
     }
 
     /**
      * Maps a network drive.
-     * @param device The device to map, for example "O:" or "LPT1:". If you pass a blank string for this parameter a connection is made but not mapped to a specific drive. If you specify "*" an unused drive letter will be automatically selected.
+     * @param device The device to map, for example "O:" or "LPT1:". 
+     *               If you pass a blank string for this parameter a connection 
+     *               is made but not mapped to a specific drive. If you specify 
+     *               "*" an unused drive letter will be automatically selected.
      * @param remote The remote share to connect to in the form "\\server\share".
-     * @param flags A combination of the following:0 = default, 1 = Persistent mapping, 8 = Show authentication dialog if required
+     * @param flags A combination of the following:0 = default, 
+     *              1 = Persistent mapping, 8 = Show authentication dialog if required
      * @return True if success, false otherwise
      */
     public boolean driveMapAdd(String device, String remote, int flags) {
@@ -289,6 +329,7 @@ public class AutoItX {
         if (result.getvt() == Variant.VariantString) {
             return oneToTrue(Integer.parseInt(result.getString()));
         }
+        
         return oneToTrue(result.getInt());
     }
 
@@ -316,7 +357,8 @@ public class AutoItX {
      * Deletes a value from a standard format .ini file.
      * @param filename The filename of the .ini file.
      * @param section The section name in the .ini file.
-     * @param key The key name in the in the .ini file. If no key name is given the entire section is deleted.
+     * @param key The key name in the in the .ini file. 
+     *            If no key name is given the entire section is deleted.
      * @return True if success, false otherwise
      */
     public boolean iniDelete(String filename, String section, String key) {
@@ -380,7 +422,9 @@ public class AutoItX {
      * @param top Top coordinate of rectangle.
      * @param right Right coordinate of rectangle.
      * @param bottom Bottom coordinate of rectangle.
-     * @param step Instead of checksumming each pixel use a value larger than 1 to skip pixels (for speed). E.g. A value of 2 will only check every other pixel. Default is 1.
+     * @param step Instead of checksumming each pixel use a value larger than 
+     *             1 to skip pixels (for speed). E.g. A value of 2 will only 
+     *             check every other pixel. Default is 1.
      * @return The checksum value of the region.
      */
     public double pixelChecksum(int left, int top, int right, int bottom, int step) {
@@ -427,11 +471,18 @@ public class AutoItX {
      * @param right right coordinate of rectangle.
      * @param bottom bottom coordinate of rectangle.
      * @param color Color value of pixel to find (in decimal or hex).
-     * @param shadeVariation A number between 0 and 255 to indicate the allowed number of shades of variation of the red, green, and blue components of the colour. Default is 0 (exact match).
-     * @param step Instead of searching each pixel use a value larger than 1 to skip pixels (for speed). E.g. A value of 2 will only check every other pixel. Default is 1.
-     * @return The pixel's coordinates in a 2 element array, otherwise sets .error() to one.
+     * @param shadeVariation A number between 0 and 255 to indicate the allowed 
+     *                       number of shades of variation of the red, green, 
+     *                       and blue components of the colour. 
+     *                       Default is 0 (exact match).
+     * @param step Instead of searching each pixel use a value larger than 1 
+     *             to skip pixels (for speed). E.g. A value of 2 will only 
+     *             check every other pixel. Default is 1.
+     * @return The pixel's coordinates in a 2 element array, otherwise sets 
+     * .error() to one.
      */
-    public long[] pixelSearch(int left, int top, int right, int bottom, int color, int shadeVariation, int step) {
+    public long[] pixelSearch(int left, int top, int right, int bottom, 
+            int color, int shadeVariation, int step) {
         Variant vLeft = new Variant(left);
         Variant vTop = new Variant(top);
         Variant vRight = new Variant(right);
@@ -457,7 +508,8 @@ public class AutoItX {
      * @param right right coordinate of rectangle.
      * @param bottom bottom coordinate of rectangle.
      * @param color Color value of pixel to find (in decimal or hex).
-     * @return The pixel's coordinates in a 2 element array, otherwise sets .error() to one.
+     * @return The pixel's coordinates in a 2 element array, otherwise 
+     * sets .error() to one.
      */
     public long[] pixelSearch(int left, int top, int right, int bottom, int color) {
         return pixelSearch(left, top, right, bottom, color, 0, 1);
@@ -466,7 +518,9 @@ public class AutoItX {
     /**
      * Sends simulated keystrokes to the active window.
      * @param keys The sequence of keys to send.
-     * @param isRaw Changes how "keys" is processed:   true -  Text contains special characters like + and ! to indicate SHIFT and ALT key presses.  false, keys are sent raw.
+     * @param isRaw Changes how "keys" is processed: 
+     * true -  Text contains special characters like + and ! to indicate SHIFT 
+     * and ALT key presses. false, keys are sent raw.
      */
     public void send(String keys, boolean isRaw) {
         Variant vKeys = new Variant(keys);
@@ -498,7 +552,7 @@ public class AutoItX {
     }
 
     /**
-     *  Creates a tooltip anywhere on the screen.
+     * Creates a tooltip anywhere on the screen.
      * @param text The text of the tooltip. (An empty string clears a displaying tooltip)
      */
     public void toolTip(String text) {
@@ -518,7 +572,8 @@ public class AutoItX {
      * Opens or closes the CD tray.
      * @param drive The drive letter of the CD tray to control, in the format D:, E:, etc.
      * @param status Specifies if you want the CD tray to be open or closed: "open" or "closed"
-     * @return True if success, false if drive is locked via CD burning software or if the drive letter is not a CD drive.
+     * @return True if success, false if drive is locked via CD burning 
+     * software or if the drive letter is not a CD drive.
      */
     public boolean cdTray(String drive, String status) {
         Variant vDrive = new Variant(drive);
@@ -566,11 +621,15 @@ public class AutoItX {
 
     /**
      * Perform a mouse click operation.
-     * @param button The button to click: "left", "right", "middle", "main", "menu", "primary", "secondary".
-     * @param x The x/y coordinates to move the mouse to. If no x and y coords are given, the current position is used.
-     * @param y The x/y coordinates to move the mouse to. If no x and y coords are given, the current position is used.
+     * @param button The button to click: "left", "right", "middle", "main", 
+     *               "menu", "primary", "secondary".
+     * @param x The x/y coordinates to move the mouse to. 
+     *          If no x and y coords are given, the current position is used.
+     * @param y The x/y coordinates to move the mouse to. 
+     *          If no x and y coords are given, the current position is used.
      * @param clicks The number of times to click the mouse. Default is 1.
-     * @param speed The speed to move the mouse in the range 1 (fastest) to 100 (slowest). A speed of 0 will move the mouse instantly. Default speed is 10.
+     * @param speed The speed to move the mouse in the range 1 (fastest) to 100 (slowest). 
+     * A speed of 0 will move the mouse instantly. Default speed is 10.
      */
     public void mouseClick(String button, int x, int y, int clicks, int speed) {
         Variant vButton = new Variant(button);
@@ -584,9 +643,11 @@ public class AutoItX {
 
     /**
      * Perform a mouse click operation.
-     * @param button The button to click: "left", "right", "middle", "main", "menu", "primary", "secondary".
+     * @param button The button to click: "left", "right", "middle", "main", 
+     *               "menu", "primary", "secondary".
      * @param clicks The number of times to click the mouse. Default is 1.
-     * @param speed The speed to move the mouse in the range 1 (fastest) to 100 (slowest). A speed of 0 will move the mouse instantly. Default speed is 10.
+     * @param speed The speed to move the mouse in the range 1 (fastest) to 100 (slowest). 
+     * A speed of 0 will move the mouse instantly. Default speed is 10.
      */
     public void mouseClick(String button, int clicks, int speed) {
         Variant vButton = new Variant(button);
@@ -598,12 +659,14 @@ public class AutoItX {
 
     /**
      * Perform a mouse click and drag operation.
-     * @param button The button to click: "left", "right", "middle", "main", "menu", "primary", "secondary".
+     * @param button The button to click: "left", "right", "middle", 
+     *               "main", "menu", "primary", "secondary".
      * @param x The x/y coords to start the drag operation from.
      * @param y The x/y coords to start the drag operation from.
      * @param x2 The x/y coords to start the drag operation to.
      * @param y2 The x/y coords to start the drag operation to.
-     * @param speed The speed to move the mouse in the range 1 (fastest) to 100 (slowest). A speed of 0 will move the mouse instantly. Default speed is 10.
+     * @param speed The speed to move the mouse in the range 1 (fastest) to 
+     * 100 (slowest). A speed of 0 will move the mouse instantly. Default speed is 10.
      */
     public void mouseClickDrag(String button, int x, int y, int x2, int y2, int speed) {
         Variant vButton = new Variant(button);
@@ -618,7 +681,8 @@ public class AutoItX {
 
     /**
      * Perform a mouse click and drag operation.
-     * @param button The button to click: "left", "right", "middle", "main", "menu", "primary", "secondary".
+     * @param button The button to click: "left", "right", "middle", "main", 
+     *               "menu", "primary", "secondary".
      * @param x The x/y coords to start the drag operation from.
      * @param y The x/y coords to start the drag operation from.
      * @param x2 The x/y coords to start the drag operation to.
@@ -630,7 +694,8 @@ public class AutoItX {
 
     /**
      * Perform a mouse down event at the current mouse position.
-     * @param button The button to click: "left", "right", "middle", "main", "menu", "primary", "secondary".
+     * @param button The button to click: "left", "right", "middle", "main", 
+     *               "menu", "primary", "secondary".
      */
     public void mouseDown(String button) {
         autoItX.invoke("MouseDown", button);
@@ -679,7 +744,9 @@ public class AutoItX {
      * Moves the mouse pointer.
      * @param x The screen x coordinate to move the mouse to.
      * @param y The screen y coordinate to move the mouse to.
-     * @param speed The speed to move the mouse in the range 1 (fastest) to 100 (slowest). A speed of 0 will move the mouse instantly. Default speed is 10.
+     * @param speed The speed to move the mouse in the range 1 (fastest) to 
+     *              100 (slowest). A speed of 0 will move the mouse instantly. 
+     *              Default speed is 10.
      * @return true if success, false otherwise (is this correct)?
      */
     public boolean mouseMove(int x, int y, int speed) {
@@ -702,7 +769,8 @@ public class AutoItX {
 
     /**
      * Perform a mouse up event at the current mouse position.
-     * @param button The button to click: "left", "right", "middle", "main", "menu", "primary", "secondary".
+     * @param button The button to click: "left", "right", "middle", "main", 
+     *               "menu", "primary", "secondary".
      */
     public void mouseUp(String button) {
         autoItX.invoke("MouseUp", button);
@@ -821,7 +889,9 @@ public class AutoItX {
      * <br/>SW_HIDE = Hidden window
      * <br/>SW_MINIMIZE = Minimized window
      * <br/>SW_MAXIMIZE = Maximized window
-     * @return The PID of the process that was launched. After running the requested program the script continues. To pause execution of the script until the spawned program has finished use the RunWait function instead.
+     * @return The PID of the process that was launched. After running the 
+     * requested program the script continues. To pause execution of the script 
+     * until the spawned program has finished use the RunWait function instead.
      * The error property is set to 1 as an indication of failure.
      */
     public int run(String filename, String workingDirectory, int flag) {
@@ -836,7 +906,9 @@ public class AutoItX {
      * Runs an external program.
      * @param filename The name of the executable (EXE, BAT, COM, or PIF) to run.
      * @param workingDirectory The working directory.
-     * @return The PID of the process that was launched. After running the requested program the script continues. To pause execution of the script until the spawned program has finished use the RunWait function instead.
+     * @return The PID of the process that was launched. After running the 
+     * requested program the script continues. To pause execution of the script 
+     * until the spawned program has finished use the RunWait function instead.
      * The error property is set to 1 as an indication of failure.
      */
     public int run(String filename, String workingDirectory) {
@@ -849,7 +921,9 @@ public class AutoItX {
     /**
      * Runs an external program.
      * @param filename The name of the executable (EXE, BAT, COM, or PIF) to run.
-     * @return The PID of the process that was launched. After running the requested program the script continues. To pause execution of the script until the spawned program has finished use the RunWait function instead.
+     * @return The PID of the process that was launched. After running the requested 
+     * program the script continues. To pause execution of the script until the 
+     * spawned program has finished use the RunWait function instead.
      * The error property is set to 1 as an indication of failure.
      */
     public int run(String filename) {
@@ -857,13 +931,16 @@ public class AutoItX {
     }
 
     /**
-     * Initialize a set of user credentials to use during Run and RunWait operations. 2000/XP or later ONLY.
+     * Initialize a set of user credentials to use during Run and RunWait 
+     * operations. 2000/XP or later ONLY.
      * @param username The user name to use.
      * @param domain The domain name to use.
      * @param password The password to use.
-     * @param options 0 = do not load the user profile, 1 = (default) load the user profile, 2 = use for net credentials only
+     * @param options 0 = do not load the user profile, 1 = (default) load the 
+     *                user profile, 2 = use for net credentials only
      * @return Returns 0 if the operating system does not support this function.
-     * Otherwise returns 1--regardless of success. (If the login information was invalid, subsequent Run/RunWait commands will fail....)
+     * Otherwise returns 1--regardless of success. (If the login information was 
+     * invalid, subsequent Run/RunWait commands will fail....)
      */
     public int runAsSet(String username, String domain, String password, int options) {
         Variant vUsername = new Variant(username);
@@ -875,12 +952,14 @@ public class AutoItX {
     }
 
     /**
-     * Initialize a set of user credentials to use during Run and RunWait operations. 2000/XP or later ONLY.
+     * Initialize a set of user credentials to use during Run and RunWait 
+     * operations. 2000/XP or later ONLY.
      * @param username The user name to use.
      * @param domain The domain name to use.
      * @param password The password to use.
      * @return Returns 0 if the operating system does not support this function.
-     * Otherwise returns 1--regardless of success. (If the login information was invalid, subsequent Run/RunWait commands will fail....)
+     * Otherwise returns 1--regardless of success. (If the login information was 
+     * invalid, subsequent Run/RunWait commands will fail....)
      */
     public int runAsSet(String username, String domain, String password) {
         return runAsSet(username, domain, password, 1);
@@ -894,7 +973,8 @@ public class AutoItX {
      * <br/>            SW_HIDE = Hidden window
      * <br/>            SW_MINIMIZE = Minimized window
      * <br/>            SW_MAXIMIZE = Maximized window
-     * @return Returns the exit code of the program that was run. The error property is set to 1 as an indication of failure.
+     * @return Returns the exit code of the program that was run. 
+     * The error property is set to 1 as an indication of failure.
      */
     public int runWait(String filename, String workingDirectory, int flag) {
         Variant vFilename = new Variant(filename);
@@ -908,7 +988,8 @@ public class AutoItX {
      * Runs an external program and pauses script execution until the program finishes.
      * @param filename The name of the executable (EXE, BAT, COM, PIF) to run.
      * @param workingDirectory The working directory.
-     * @return Returns the exit code of the program that was run. The error property is set to 1 as an indication of failure.
+     * @return Returns the exit code of the program that was run. 
+     * The error property is set to 1 as an indication of failure.
      */
     public int runWait(String filename, String workingDirectory) {
         Variant vFilename = new Variant(filename);
@@ -920,7 +1001,8 @@ public class AutoItX {
     /**
      * Runs an external program and pauses script execution until the program finishes.
      * @param filename The name of the executable (EXE, BAT, COM, PIF) to run.
-     * @return Returns the exit code of the program that was run. The error property is set to 1 as an indication of failure.
+     * @return Returns the exit code of the program that was run. 
+     * The error property is set to 1 as an indication of failure.
      */
     public int runWait(String filename) {
         return autoItX.invoke("RunWait", filename).getInt();
@@ -934,7 +1016,8 @@ public class AutoItX {
      * <br/>2 = Reboot
      * <br/>4 = Force
      * <br/>8 = Power down
-     * Add the required values together. To shutdown and power down, for example, the code would be 9 (shutdown + power down = 1 + 8 = 9).
+     * Add the required values together. To shutdown and power down, 
+     * for example, the code would be 9 (shutdown + power down = 1 + 8 = 9).
      * @return True if success, false otherwise.
      */
     public boolean shutdown(int code) {
@@ -944,7 +1027,8 @@ public class AutoItX {
     /**
      * Deletes a key from the registry.
      * @param keyname The registry key to write to.
-     * @return Success: Returns 1. Special: Returns 0 if the key does not exist. Failure: Returns 2 if error deleting key. 
+     * @return Success: Returns 1. Special: Returns 0 if the key does not exist. 
+     * Failure: Returns 2 if error deleting key.
      */
     public int regDeleteKey(String keyname) {
         return autoItX.invoke("RegDeleteKey", keyname).getInt();
@@ -953,7 +1037,8 @@ public class AutoItX {
     /**
      * Deletes a value from the registry.
      * @param keyname The registry key to write to.
-     * @return Success: Returns 1. Special: Returns 0 if the key does not exist. Failure: Returns 2 if error deleting key.
+     * @return Success: Returns 1. Special: Returns 0 if the key does not exist. 
+     * Failure: Returns 2 if error deleting key.
      */
     public int regDeleteVal(String keyname) {
         return autoItX.invoke("RegDeleteVal", keyname).getInt();
@@ -963,7 +1048,9 @@ public class AutoItX {
      * Reads the name of a subkey according to it's instance.
      * @param keyname The registry key to read.
      * @param instance The 1-based key instance to retrieve.
-     * @return Success: Returns the requested subkey name. Otherwise Returns "" and sets the .error() flag,  1 if unable to open requested key, -1 if unable to retrieve requested subkey (key instance out of range)
+     * @return Success: Returns the requested subkey name. Otherwise Returns "" 
+     * and sets the .error() flag,  1 if unable to open requested key, 
+     * -1 if unable to retrieve requested subkey (key instance out of range)
      */
     public String regEnumKey(String keyname, int instance) {
         Variant vKeyname = new Variant(keyname);
@@ -976,7 +1063,9 @@ public class AutoItX {
      * Reads the name of a value according to it's instance.
      * @param keyname The registry key to read.
      * @param instance The 1-based key instance to retrieve.
-     * @return Success: Returns the requested subkey name. Otherwise Returns "" and sets the .error() flag,  1 if unable to open requested key, -1 if unable to retrieve requested subkey (key instance out of range)
+     * @return Success: Returns the requested subkey name. Otherwise Returns "" 
+     * and sets the .error() flag,  1 if unable to open requested key, -1 if 
+     * unable to retrieve requested subkey (key instance out of range)
      */
     public String regEnumVal(String keyname, int instance) {
         Variant vKeyname = new Variant(keyname);
@@ -1013,9 +1102,11 @@ public class AutoItX {
 
     /**
      * Creates a key or value in the registry.
-     * @param keyname The registry key to write to. If no other parameters are specified this key will simply be created.
+     * @param keyname The registry key to write to. If no other parameters are 
+     *                specified this key will simply be created.
      * @param valueName The valuename to write to.
-     * @param type Type of key to write: "REG_SZ", "REG_MULTI_SZ", "REG_EXPAND_SZ", "REG_DWORD", or "REG_BINARY".
+     * @param type Type of key to write: "REG_SZ", "REG_MULTI_SZ", "REG_EXPAND_SZ",
+     *             "REG_DWORD", or "REG_BINARY".
      * @param value The value to write.
      * @return True if success, false otherwise.
      */
@@ -1042,13 +1133,15 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param controlID The control to interact with.
-     * @param button The button to click, "left", "right" or "middle". Default is the left button.
+     * @param button The button to click, "left", "right" or "middle". 
+     *               Default is the left button.
      * @param clicks The number of times to click the mouse. Default is center.
      * @param x The x position to click within the control. Default is center.
      * @param y The y position to click within the control. Default is center.
      * @return True if success, false otherwise.
      */
-    public boolean controlClick(String title, String text, String controlID, String button, int clicks, int x, int y) {
+    public boolean controlClick(String title, String text, String controlID, 
+            String button, int clicks, int x, int y) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vControlID = new Variant(controlID);
@@ -1066,11 +1159,13 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param controlID The control to interact with.
-     * @param button The button to click, "left", "right" or "middle". Default is the left button.
+     * @param button The button to click, "left", "right" or "middle". 
+     *               Default is the left button.
      * @param clicks The number of times to click the mouse. Default is center.
      * @return True if success, false otherwise.
      */
-    public boolean controlClick(String title, String text, String controlID, String button, int clicks) {
+    public boolean controlClick(String title, String text, String controlID, 
+            String button, int clicks) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vControlID = new Variant(controlID);
@@ -1086,7 +1181,8 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param controlID The control to interact with.
-     * @param button The button to click, "left", "right" or "middle". Default is the left button.
+     * @param button The button to click, "left", "right" or "middle". 
+     *               Default is the left button.
      * @return True if success, false otherwise.
      */
     public boolean controlClick(String title, String text, String controlID, String button) {
@@ -1104,17 +1200,20 @@ public class AutoItX {
         return controlClick(title, text, controlID, "left", 1);
     }
 
-    private String controlCommandString(String title, String text, String control, String command, String option) {
+    private String controlCommandString(String title, String text, String control,
+            String command, String option) {
         Variant result = controlCommandVariant(title, text, control, command, option);
         return result.getString();
     }
 
-    private void controlCommandVoid(String title, String text, String control, String command, String option) {
+    private void controlCommandVoid(String title, String text, String control, 
+            String command, String option) {
         controlCommandVariant(title, text, control, command, option);
 
     }
 
-    private Variant controlCommandVariant(String title, String text, String control, String command, String option) {
+    private Variant controlCommandVariant(String title, String text, String control, 
+            String command, String option) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vControl = new Variant(control);
@@ -1155,7 +1254,7 @@ public class AutoItX {
     }
 
     /**
-     * Unchecks radio or check Button
+     * Un-checks radio or check Button
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
@@ -1169,6 +1268,7 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
+     * @param string The string.
      */
     public void controlCommandAddString(String title, String text, String control, String string) {
         controlCommandVoid(title, text, control, "AddString", string);
@@ -1179,16 +1279,18 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
+     * @param occurrance The occurrance.
      */
-    public void controlCommandDeleteString(String title, String text, String control, String occurance) {
-        controlCommandVoid(title, text, control, "DelString", occurance);
+    public void controlCommandDeleteString(String title, String text, String control, String occurrance) {
+        controlCommandVoid(title, text, control, "DelString", occurrance);
     }
 
     /**
-     * Pastes the 'string' at the Edit's caret position.
+     * Pastes the 'string' at the Edits caret position.
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
+     * @param string The string.
      */
     public void controlCommandEditPaste(String title, String text, String control, String string) {
         controlCommandVoid(title, text, control, "EditPaste", string);
@@ -1199,9 +1301,11 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
+     * @param occurrance
      */
-    public void controlCommandSetCurrentSelection(String title, String text, String control, String occurance) {
-        controlCommandVoid(title, text, control, "SetCurrentSelection", occurance);
+    public void controlCommandSetCurrentSelection(String title, String text, 
+            String control, String occurrance) {
+        controlCommandVoid(title, text, control, "SetCurrentSelection", occurrance);
     }
 
     /**
@@ -1209,12 +1313,14 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
+     * @param string The string.
      */
     public void controlCommandSelectString(String title, String text, String control, String string) {
         controlCommandVoid(title, text, control, "SelectString", string);
     }
 
-    private boolean controlCommandBoolean(String title, String text, String control, String command, String option) {
+    private boolean controlCommandBoolean(String title, String text, String control, 
+            String command, String option) {
         return oneToTrue(controlCommandInts(title, text, control, command, option));
     }
 
@@ -1256,16 +1362,18 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
+     * @param string The string.
      * @return Returns occurrence ref of the exact string in a ListBox or ComboBox.
      */
     public int controlCommandFindString(String title, String text, String control, String string) {
         return controlCommandInts(title, text, control, "FindString", string);
     }
 
-    private int controlCommandInts(String title, String text, String control, String command, String option) {
+    private int controlCommandInts(String title, String text, String control, 
+            String command, String option) {        
         Variant result = controlCommandVariant(title, text, control, command, option);
-        return result.getvt() == Variant.VariantString 
-                ? Integer.parseInt(result.getString()) 
+        return result.getvt() == Variant.VariantString
+                ? Integer.parseInt(result.getString())
                 : 0;
     }
 
@@ -1307,9 +1415,11 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
-     * @param charLength The er size.
+     * @param charLength The char size.
+     * @return The current selection.
      */
-    public String controlCommandGetCurrentSelection(String title, String text, String control, int charLength) {
+    public String controlCommandGetCurrentSelection(String title, String text, 
+            String control, int charLength) {
         return controlCommandString(title, text, control, "GetCurrentSelection", "");
     }
 
@@ -1318,6 +1428,8 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
+     * @param charLength The length to get.
+     * @return The selected text.
      */
     public String controlCommandGetSelected(String title, String text, String control, int charLength) {
         return controlCommandString(title, text, control, "GetSelected", "");
@@ -1348,6 +1460,7 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
+     * @return Returns the current Tab shown of a SysTabControl32
      */
     public String controlCommandCurrentTab(String title, String text, String control) {
         return controlCommandString(title, text, control, "CurrentTab", "");
@@ -1371,8 +1484,12 @@ public class AutoItX {
 
     /**
      * Enables a "grayed-out" control.
-     * Use with caution.
-     * When using a control name in the Control functions, you need to add a number to the end of the name to indicate which control. For example, if there two controls listed called "MDIClient", you would refer to these as "MDIClient1" and "MDIClient2".
+     * <br/><b>Use with caution.</b>
+     * <br/>
+     * When using a control name in the Control functions, you need to add a 
+     * number to the end of the name to indicate which control. For example, 
+     * if there two controls listed called "MDIClient", you would refer to 
+     * these as "MDIClient1" and "MDIClient2".
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
@@ -1399,10 +1516,13 @@ public class AutoItX {
     }
 
     /**
-     * Returns the ControlRef# of the control that has keyboard focus within a specified window.
+     * Returns the ControlRef# of the control that has keyboard focus within 
+     * a specified window.
      * @param title Title of window to check.
      * @param text Text from window to check.
-     * @return ControlRef# of the control that has keyboard focus within a specified window. Otherwise returns a blank string and sets .error() to 1 if window is not found.
+     * @return ControlRef# of the control that has keyboard focus within a 
+     * specified window. Otherwise returns a blank string and sets .error() 
+     * to 1 if window is not found.
      */
     public String controlGetFocus(String title, String text) {
         Variant vTitle = new Variant(title);
@@ -1412,9 +1532,12 @@ public class AutoItX {
     }
 
     /**
-     * Returns the ControlRef# of the control that has keyboard focus within a specified window.
+     * Returns the ControlRef# of the control that has keyboard focus within a 
+     * specified window.
      * @param title Title of window to check.
-     * @return ControlRef# of the control that has keyboard focus within a specified window. Otherwise returns a blank string and sets .error() to 1 if window is not found.
+     * @return ControlRef# of the control that has keyboard focus within a 
+     * specified window. Otherwise returns a blank string and sets .error() 
+     * to 1 if window is not found.
      */
     public String controlGetFocus(String title) {
         return autoItX.invoke("ControlGetFocus", title).getString();
@@ -1425,7 +1548,9 @@ public class AutoItX {
      * @param title The title of the window to read.
      * @param text The text of the window to read.
      * @param controlID The control to interact with.
-     * @return Returns a string containing the control handle value. Otherwise returns "" (blank string) and sets oAutoIt.error to 1 if no window matches the criteria.
+     * @return Returns a string containing the control handle value. 
+     * Otherwise returns "" (blank string) and sets oAutoIt.error to 1 
+     * if no window matches the criteria.
      */
     public String controlGetHandle(String title, String text, String controlID) {
         return controlString(title, text, controlID, "ControlGetHandle");
@@ -1436,7 +1561,7 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param controlID The control to interact with.
-     * @return The X coordinate of the control. Otherwise returns the X coordinate of the control.
+     * @return The X coordinate of the control. 
      */
     public int controlGetPosX(String title, String text, String controlID) {
         return controlInt(title, text, controlID, "ControlGetPosX");
@@ -1447,7 +1572,7 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param controlID The control to interact with.
-     * @return The Y coordinate of the control. Otherwise returns the Y coordinate of the control.
+     * @return The Y coordinate of the control. 
      */
     public int controlGetPosY(String title, String text, String controlID) {
         return controlInt(title, text, controlID, "ControlGetPosY");
@@ -1469,7 +1594,8 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param controlID The control to interact with.
-     * @return Returns the height of the control. Otherwise returns the Y coordinate of the control.
+     * @return Returns the height of the control. 
+     * Otherwise returns the Y coordinate of the control.
      */
     public int controlGetPosHeight(String title, String text, String controlID) {
         return controlInt(title, text, controlID, "ControlGetPosHeight");
@@ -1480,7 +1606,8 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param controlID The control to interact with.
-     * @return Text from a control. If fails, sets .error() to 1 and returns a blank string of "".
+     * @return Text from a control. 
+     * If fails, sets .error() to 1 and returns a blank string of "".
      */
     public String controlGetText(String title, String text, String controlID) {
         return controlString(title, text, controlID, "ControlGetText");
@@ -1506,19 +1633,23 @@ public class AutoItX {
      * @param subitem The SubItem
      * @return Returns the item index of the string. Returns -1 if the string is not found.
      */
-    public int controlListViewFindItem(String title, String text, String control, String string, String subitem) {
+    public int controlListViewFindItem(String title, String text, String control, 
+            String string, String subitem) {
         return controlListViewInt(title, text, control, "FindItem", string, subitem);
     }
 
-    private int controlListViewInt(String title, String text, String control, String command, String option, String option2) {
+    private int controlListViewInt(String title, String text, String control, 
+            String command, String option, String option2) {
         return controlView(title, text, control, command, option, option2, "ControlListView").getInt();
     }
 
-    private String controlListViewString(String title, String text, String control, String command, String option, String option2) {
+    private String controlListViewString(String title, String text, String control, 
+            String command, String option, String option2) {
         return controlView(title, text, control, command, option, option2, "ControlListView").getString();
     }
 
-    private Variant controlView(String title, String text, String control, String command, String option, String option2, String function) {
+    private Variant controlView(String title, String text, String control, 
+            String command, String option, String option2, String function) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vControl = new Variant(control);
@@ -1572,7 +1703,8 @@ public class AutoItX {
      * @param subitem The text of a subitem.
      * @return Returns the text of a given item/subitem.
      */
-    public String controlListViewGetText(String title, String text, String control, String item, String subitem) {
+    public String controlListViewGetText(String title, String text, String control, 
+            String item, String subitem) {
         return controlListViewString(title, text, control, "GetText", item, subitem);
     }
 
@@ -1590,23 +1722,35 @@ public class AutoItX {
     }
 
     /**
-     * Returns a string containing the item index of selected items. If option=0 (default) only the first selected item is returned. If option=1 then all the selected items are returned delimited by |, e.g: "0|3|4|10". If no items are selected a blank "" string is returned.
+     * Returns a string containing the item index of selected items. 
+     * If option=0 (default) only the first selected item is returned. 
+     * If option=1 then all the selected items are returned delimited by |, 
+     * e.g: "0|3|4|10". If no items are selected a blank "" string is returned.
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
-     * @return Returns a string containing the item index of selected items. If option=0 (default) only the first selected item is returned. If option=1 then all the selected items are returned delimited by |, e.g: "0|3|4|10". If no items are selected a blank "" string is returned.
+     * @return Returns a string containing the item index of selected items. 
+     * If option=0 (default) only the first selected item is returned. 
+     * If option=1 then all the selected items are returned delimited by |, 
+     * e.g: "0|3|4|10". If no items are selected a blank "" string is returned.
      */
     public String controlListViewGetSelected(String title, String text, String control) {
         return controlListViewString(title, text, control, "GetSelected", "", "");
     }
 
     /**
-     * Returns a string containing the item index of selected items. If option=0 (default) only the first selected item is returned. If option=1 then all the selected items are returned delimited by |, e.g: "0|3|4|10". If no items are selected a blank "" string is returned.
+     * Returns a string containing the item index of selected items. 
+     * If option=0 (default) only the first selected item is returned. 
+     * If option=1 then all the selected items are returned delimited by |, 
+     * e.g: "0|3|4|10". If no items are selected a blank "" string is returned.
      * If no items are selected a blank "" string is returned.
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
-     * @return Returns a string containing the item index of selected items. If option=0 (default) only the first selected item is returned. If option=1 then all the selected items are returned delimited by |, e.g: "0|3|4|10". If no items are selected a blank "" string is returned.
+     * @return Returns a string containing the item index of selected items. 
+     * If option=0 (default) only the first selected item is returned. 
+     * If option=1 then all the selected items are returned delimited by |, 
+     * e.g: "0|3|4|10". If no items are selected a blank "" string is returned.
      */
     public String[] controlListViewGetSelectedArray(String title, String text, String control) {
         SafeArray safeArr = controlView(title, text, control, "GetSelected", "", "", "ControlListView").toSafeArray();
@@ -1621,7 +1765,8 @@ public class AutoItX {
      * @param from The start index.
      * @param to The to index.
      */
-    public void controlListViewSelect(String title, String text, String control, String from, String to) {
+    public void controlListViewSelect(String title, String text, String control, 
+            String from, String to) {
         controlView(title, text, control, "Select", from, to, "ControlListView");
     }
 
@@ -1630,8 +1775,11 @@ public class AutoItX {
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
+     * @param from The start index.
+     * @param to The end index. 
      */
-    public void controlListViewSelectAll(String title, String text, String control, String from, String to) {
+    public void controlListViewSelectAll(String title, String text, String control, 
+            String from, String to) {
         controlView(title, text, control, "SelectAll", from, to, "ControlListView");
     }
 
@@ -1673,13 +1821,15 @@ public class AutoItX {
     }
 
     /**
-     * Changes the current view. Valid views are "list", "details", "smallicons", "largeicons".
+     * Changes the current view. Valid views are "list", "details", "smallicons", 
+     * "largeicons".
      * @param title The title of the window to access.
      * @param text The text of the window to access.
      * @param control The control to interact with.
      * @param view Valid views are "list", "details", "smallicons", "largeicons".
      */
-    public void controlListViewSelectViewChange(String title, String text, String control, String view) {
+    public void controlListViewSelectViewChange(String title, String text, 
+            String control, String view) {
         controlView(title, text, control, "ViewChnage", view, "", "ControlListView");
     }
 
@@ -1725,7 +1875,8 @@ public class AutoItX {
      * @param height New height of the window.
      * @return True if success, false otherwise
      */
-    public boolean controlMove(String title, String text, String control, int x, int y, int width, int height) {
+    public boolean controlMove(String title, String text, String control, 
+            int x, int y, int width, int height) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vControl = new Variant(control);
@@ -1764,10 +1915,13 @@ public class AutoItX {
      * @param text The text of the window to access.
      * @param control The control to interact with.
      * @param string String of characters to send to the control.
-     * @param sendRawKeys If true, text contains special characters like + to indicate SHIFT and {LEFT} to indicate left arrow. If false, text is sent raw.
+     * @param sendRawKeys If true, text contains special characters like + 
+     *                    to indicate SHIFT and {LEFT} to indicate left arrow. 
+     *                    If false, text is sent raw.
      * @return  True if success, false otherwise
      */
-    public boolean controlSend(String title, String text, String control, String string, boolean sendRawKeys) {
+    public boolean controlSend(String title, String text, String control, 
+            String string, boolean sendRawKeys) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vControl = new Variant(control);
@@ -1821,15 +1975,18 @@ public class AutoItX {
         return controlBool(title, text, control, "ControlShow");
     }
 
-    private String controlTreeViewString(String title, String text, String control, String command, String option, String option2) {
+    private String controlTreeViewString(String title, String text, String control, 
+            String command, String option, String option2) {
         return controlView(title, text, control, command, option, option2, "ControlTreeView").getString();
     }
 
-    private int controlTreeViewInt(String title, String text, String control, String command, String option, String option2) {
+    private int controlTreeViewInt(String title, String text, String control, 
+            String command, String option, String option2) {
         return controlView(title, text, control, command, option, option2, "ControlTreeView").getInt();
     }
 
-    public boolean controlTreeViewBoolean(String title, String text, String control, String command, String option, String option2) {
+    public boolean controlTreeViewBoolean(String title, String text, String control, 
+            String command, String option, String option2) {
         Variant result = controlView(title, text, control, command, option, option2, "ControlTreeView");
         return oneToTrue(result.getInt());
     }
@@ -1862,6 +2019,7 @@ public class AutoItX {
      * @param text The text of the window to access.
      * @param control The control to interact with.
      * @param item The item to check
+     * @return True if the tree view exists.
      */
     public Boolean controlTreeViewExists(String title, String text, String control, String item) {
         return controlTreeViewBoolean(title, text, control, "Exists", item, "");
@@ -1973,7 +2131,9 @@ public class AutoItX {
      * Retrieves the text from a standard status bar control.
      * @param title The title of the window to check.
      * @param text The text of the window to check.
-     * @param part The "part" number of the status bar to read - the default is 1. 1 is the first possible part and usually the one that contains the useful messages like "Ready" "Loading...", etc.
+     * @param part The "part" number of the status bar to read 
+     *             the default is 1. 1 is the first possible part and usually 
+     *             the one that contains the useful messages like "Ready" "Loading...", etc.
      * @return The text from a standard status bar control.
      */
     public String statusbarGetText(String title, String text, int part) {
@@ -2100,7 +2260,8 @@ public class AutoItX {
      * Retrieves the classes from a window.
      * @param title The title of the window to read.
      * @param text The text of the window to read.
-     * @return A string containing the window classes read, otherwise returns empty string and sets .error() to 1.
+     * @return A string containing the window classes read, otherwise returns 
+     * empty string and sets .error() to 1.
      */
     public String winGetClassList(String title, String text) {
         Variant vTitle = new Variant(title);
@@ -2114,7 +2275,8 @@ public class AutoItX {
      * Retrieves the size of a given window's client area.
      * @param title The title of the window to read.
      * @param text The text of the window to read.
-     * @return Returns the width of the window's client area, else returns 1 and sets .error() =1;
+     * @return Returns the width of the window's client area, else returns 1 
+     * and sets .error() =1;
      */
     public int winGetClientSizeWidth(String title, String text) {
         Variant result = winVariant(title, text, "WinGetClientSizeWidth");
@@ -2125,7 +2287,8 @@ public class AutoItX {
      * Retrieves the size of a given window's client area.
      * @param title The title of the window to read.
      * @param text The text of the window to read.
-     * @return Returns the height of the window's client area, else returns 1 and sets .error() =1;
+     * @return Returns the height of the window's client area, else returns 1 
+     * and sets .error() =1;
      */
     public int winGetClientSizeHeight(String title, String text) {
         Variant result = winVariant(title, text, "WinGetClientSizeHeight");
@@ -2135,7 +2298,8 @@ public class AutoItX {
     /**
      * Retrieves the size of a given window's client area.
      * @param title The title of the window to read.
-     * @return Returns the width of the window's client area, else returns 1 and sets .error() =1;
+     * @return Returns the width of the window's client area, else returns 1 
+     * and sets .error() =1;
      */
     public int winGetClientSizeWidth(String title) {
         Variant result = winVariant(title, "WinGetClientSizeWidth");
@@ -2145,7 +2309,8 @@ public class AutoItX {
     /**
      * Retrieves the size of a given window's client area.
      * @param title The title of the window to read.
-     * @return Returns the height of the window's client area, else returns 1 and sets .error() =1;
+     * @return Returns the height of the window's client area, else returns 1 
+     * and sets .error() =1;
      */
     public int winGetClientSizeHeight(String title) {
         Variant result = winVariant(title, "WinGetClientSizeHeight");
@@ -2160,7 +2325,8 @@ public class AutoItX {
      * Retrieves the internal handle of a window.
      * @param title The title of the window to read.
      * @param text The text of the window to read.
-     * @return A string containing the window handle value. Otherwise returns "" and sets .error() to 1.
+     * @return A string containing the window handle value. Otherwise returns "" 
+     * and sets .error() to 1.
      */
     public String winGetHandle(String title, String text) {
         Variant result = winVariant(title, text, "WinGetHandle");
@@ -2170,7 +2336,8 @@ public class AutoItX {
     /**
      * Retrieves the internal handle of a window.
      * @param title The title of the window to read.
-     * @return A string containing the window handle value. Otherwise returns "" and sets .error() to 1.
+     * @return A string containing the window handle value. Otherwise returns "" 
+     * and sets .error() to 1.
      */
     public String winGetHandle(String title) {
         Variant result = winVariant(title, "WinGetHandle");
@@ -2181,7 +2348,8 @@ public class AutoItX {
      * Retrieves the position and size of a given window.
      * @param title The title of the window to read.
      * @param text The text of the window to read.
-     * @return Returns the X coordinate of the window. Otherwise returns 1 and sets .error() = 1
+     * @return Returns the X coordinate of the window. Otherwise returns 1 and 
+     * sets .error() = 1
      */
     public int winGetPosX(String title, String text) {
         return winVariant(title, text, "WinGetPosX").getInt();
@@ -2190,7 +2358,8 @@ public class AutoItX {
     /**
      * Retrieves the position and size of a given window.
      * @param title The title of the window to read.
-     * @return Returns the X coordinate of the window. Otherwise returns 1 and sets .error() = 1
+     * @return Returns the X coordinate of the window. Otherwise returns 1 and 
+     * sets .error() = 1
      */
     public int winGetPosX(String title) {
         return winVariant(title, "WinGetPosX").getInt();
@@ -2200,7 +2369,8 @@ public class AutoItX {
      * Retrieves the position and size of a given window.
      * @param title The title of the window to read.
      * @param text The text of the window to read.
-     * @return Returns the Y coordinate of the window. Otherwise returns 1 and sets .error() = 1
+     * @return Returns the Y coordinate of the window. Otherwise returns 1 and 
+     * sets .error() = 1
      */
     public int winGetPosY(String title, String text) {
         Variant result = winVariant(title, text, "WinGetPosY");
@@ -2210,7 +2380,8 @@ public class AutoItX {
     /**
      * Retrieves the position and size of a given window.
      * @param title The title of the window to read.
-     * @return Returns the Y coordinate of the window. Otherwise returns 1 and sets .error() = 1
+     * @return Returns the Y coordinate of the window. Otherwise returns 1 and 
+     * sets .error() = 1
      */
     public int winGetPosY(String title) {
         Variant result = winVariant(title, "WinGetPosY");
@@ -2221,7 +2392,8 @@ public class AutoItX {
      * Retrieves the position and size of a given window.
      * @param title The title of the window to read.
      * @param text The text of the window to read.
-     * @return Returns the width of the window. Otherwise returns 1 and sets .error() = 1
+     * @return Returns the width of the window. Otherwise returns 1 and sets 
+     * error() = 1
      */
     public int winGetPosWidth(String title, String text) {
         Variant result = winVariant(title, text, "WinGetPosWidth");
@@ -2231,7 +2403,8 @@ public class AutoItX {
     /**
      * Retrieves the position and size of a given window.
      * @param title The title of the window to read.
-     * @return Returns the width of the window. Otherwise returns 1 and sets .error() = 1
+     * @return Returns the width of the window. Otherwise returns 1 and sets 
+     * error() = 1
      */
     public int winGetPosWidth(String title) {
         Variant result = winVariant(title, "WinGetPosWidth");
@@ -2242,7 +2415,8 @@ public class AutoItX {
      * Retrieves the position and size of a given window.
      * @param title The title of the window to read.
      * @param text The text of the window to read.
-     * @return Returns the height of the window. Otherwise returns 1 and sets .error() = 1
+     * @return Returns the height of the window. Otherwise returns 1 and sets 
+     * error() = 1
      */
     public int winGetPosHeight(String title, String text) {
         Variant result = winVariant(title, text, "WinGetPosHeight");
@@ -2252,7 +2426,8 @@ public class AutoItX {
     /**
      * Retrieves the position and size of a given window.
      * @param title The title of the window to read.
-     * @return Returns the height of the window. Otherwise returns 1 and sets .error() = 1
+     * @return Returns the height of the window. Otherwise returns 1 and sets 
+     * error() = 1
      */
     public int winGetPosHeight(String title) {
         Variant result = winVariant(title, "WinGetPosHeight");
@@ -2284,13 +2459,15 @@ public class AutoItX {
      * Retrieves the state of a given window.
      * @param title The title of the window to read.
      * @param text The text of the window to read.
-     * @return  Returns a value indicating the state of the window. Multiple values are added together so use BitAND() to examine the part you are interested in:
-     * 1 =  Window exists
-     * 2 = Window is visible
-     * 4 = Windows is enabled
-     * 8 = Window is active
-     * 16 = Window is minimized
-     * otherwise returns 0 and sets oAutoIt.error to 1 if the window is not found.
+     * @return  Returns a value indicating the state of the window. 
+     * Multiple values are added together so use BitAND() to examine the part 
+     * you are interested in:
+     * <br/>1 =  Window exists
+     * <br/>2 = Window is visible
+     * <br/>4 = Windows is enabled
+     * <br/>8 = Window is active
+     * <br/>16 = Window is minimized
+     * <br/>otherwise returns 0 and sets oAutoIt.error to 1 if the window is not found.
      */
     public int winGetState(String title, String text) {
         Variant result = winVariant(title, text, "WinGetState");
@@ -2300,7 +2477,9 @@ public class AutoItX {
     /**
      * Retrieves the state of a given window.
      * @param title The title of the window to read.
-     * @return  Returns a value indicating the state of the window. Multiple values are added together so use BitAND() to examine the part you are interested in:
+     * @return  Returns a value indicating the state of the window. 
+     * Multiple values are added together so use BitAND() to examine the 
+     * part you are interested in:
      * <br/> 1 =  Window exists
      * <br/> 2 = Window is visible
      * <br/> 4 = Windows is enabled
@@ -2315,8 +2494,10 @@ public class AutoItX {
 
     /**
      * Retrieves up to 64KB of text from a window.
-     * <p>WinGetText works on minimized windows, but only works on hidden windows if you've set AutoItSetOption("WinDetectHiddenText", 1)
-     * If multiple windows match the criteria for WinGetText, the information for the most recently active match is returned.
+     * <p>WinGetText works on minimized windows, but only works on hidden windows 
+     * if you've set AutoItSetOption("WinDetectHiddenText", 1)
+     * If multiple windows match the criteria for WinGetText, the information 
+     * for the most recently active match is returned.
      * Use WinGetText("") to get the active window's text.</p>
      * @param title The title of the window to read.
      * @param text The text of the window to read.
@@ -2329,8 +2510,10 @@ public class AutoItX {
 
     /**
      * Retrieves up to 64KB of text from a window.
-     * <p>WinGetText works on minimized windows, but only works on hidden windows if you've set AutoItSetOption("WinDetectHiddenText", 1)
-     * If multiple windows match the criteria for WinGetText, the information for the most recently active match is returned.
+     * <p>WinGetText works on minimized windows, but only works on hidden windows 
+     * if you've set AutoItSetOption("WinDetectHiddenText", 1)
+     * If multiple windows match the criteria for WinGetText, the information 
+     * for the most recently active match is returned.
      * Use WinGetText("") to get the active window's text.</p>
      * @param title The title of the window to read.
      * @return Returns a string containing up to 64k of the window text read.
@@ -2388,7 +2571,8 @@ public class AutoItX {
      * Retrieves a list of windows.
      * @param title The title of the window.
      * @param text The text of the window.
-     * @return Returns a 2 dimensional array containing the window titles and corresponding handles.
+     * @return Returns a 2 dimensional array containing the window titles 
+     * and corresponding handles.
      */
     public String[][] winList(String title, String text) {
         Variant result = winVariant(title, text, "WinList");
@@ -2405,7 +2589,8 @@ public class AutoItX {
     /**
      * Retrieves a list of windows.
      * @param title The title of the window.
-     * @return Returns a 2 dimensional array containing the window titles and corresponding handles.
+     * @return Returns a 2 dimensional array containing the window titles 
+     * and corresponding handles.
      */
     public String[][] winList(String title) {
         Variant result = winVariant(title, "WinList");
@@ -2416,6 +2601,7 @@ public class AutoItX {
             resultArr[0][i] = arr.getString(0, i);
             resultArr[1][i] = arr.getString(1, i);
         }
+        
         return resultArr;
     }
 
@@ -2462,7 +2648,8 @@ public class AutoItX {
      * @param item3 Text of Menu Item
      * @return True if success, false otherwise.
      */
-    public boolean winMenuSelectItem(String title, String text, String item, String item2, String item3) {
+    public boolean winMenuSelectItem(String title, String text, String item, 
+            String item2, String item3) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vItem = new Variant(item);
@@ -2486,7 +2673,8 @@ public class AutoItX {
      * @param item7 Text of Menu Item
      * @return True if success, false otherwise.
      */
-    public boolean winMenuSelectItem(String title, String text, String item, String item2, String item3, String item4, String item5, String item6, String item7) {
+    public boolean winMenuSelectItem(String title, String text, String item, 
+            String item2, String item3, String item4, String item5, String item6, String item7) {
         Variant vTitle = new Variant(title);
         Variant vText = new Variant(text);
         Variant vItem = new Variant(item);
@@ -2607,8 +2795,10 @@ public class AutoItX {
      * Sets the transparency of a window. (Windows 2000/XP or later)
      * @param title The title of the window to affect.
      * @param text The text of the window to affect.
-     * @param transparency A number in the range 0 - 255. The larger the number, the more transparent the window will become.
-     * @return True on success, false on failure. .error() will be set to 1 if the function isn't supported on an OS.
+     * @param transparency A number in the range 0 - 255. The larger the number, 
+     *                     the more transparent the window will become.
+     * @return True on success, false on failure. .error() will be set to 1 
+     * if the function isn't supported on an OS.
      */
     public boolean winSetTrans(String title, String text, int transparency) {
         Variant vTitle = new Variant(title);
@@ -2616,11 +2806,7 @@ public class AutoItX {
         Variant vTransparency = new Variant(transparency);
         Variant[] params = new Variant[]{vTitle, vText, vTransparency};
         Variant result = autoItX.invoke("WinSetTrans", params);
-        int iResult = result.getInt();
-        if (iResult != 0) {
-            return true;
-        }
-        return false;
+        return result.getInt() != 0;
     }
 
     /**
